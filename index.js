@@ -25,8 +25,6 @@ async function run() {
 
 
 
-
-
         // 1111111. received user from client site and POST user in database
         app.post('/user', async (req, res) => {
             const newUser = req.body;
@@ -63,7 +61,7 @@ async function run() {
 
 
 
-        // 4 _____________ for Update User ______________
+        // 4444444 ________ catch a user for Update User _____________
         app.get('/user/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) }
@@ -71,7 +69,7 @@ async function run() {
             res.send(result);
         })
 
-        // _______________ for Update User _______________
+        // _______________ to Update User _______________
         app.put('/user/:id', async (req, res) => {
             const id = req.params.id;
             const updatedUser = req.body;
@@ -95,6 +93,8 @@ async function run() {
 
         })
 
+
+
     }
     finally {
 
@@ -103,8 +103,7 @@ async function run() {
 run().catch(console.dir);
 
 
-
-
+// ________ test server route running or not ______
 app.get('/', (req, res) => {
     res.send('Hello World New')
 });
